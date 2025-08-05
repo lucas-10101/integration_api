@@ -9,6 +9,8 @@ import (
 func Router() *mux.Router {
 	router := mux.NewRouter()
 
+	router.Use()
+
 	OpenAPIDefinitionHandler(router)
 	router.HandleFunc("/api/status", ApiStatus).Methods(http.MethodGet)
 

@@ -1,7 +1,7 @@
 package server
 
 import (
-	"api/resources"
+	"api/static"
 	"net/http"
 
 	_ "embed"
@@ -13,5 +13,5 @@ func OpenAPIDefinitionHandler(router *mux.Router) {
 
 	pathPrefix := router.PathPrefix("/swagger")
 
-	pathPrefix.Handler(http.FileServerFS(resources.SwaggerFS)).Methods(http.MethodGet)
+	pathPrefix.Handler(http.FileServerFS(static.SwaggerFS)).Methods(http.MethodGet)
 }
